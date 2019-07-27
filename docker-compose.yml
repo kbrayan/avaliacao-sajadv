@@ -1,7 +1,7 @@
 version: '3'
 services:
  docker-spring:
-  build: ./gs-spring-boot/complete
+  build: ./spring-backend
   environment:
     - POSTGRES_PASSWORD=springpass
     - POSTGRES_DB=springbootdb
