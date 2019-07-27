@@ -1,0 +1,76 @@
+<div class="container">
+    <mat-card>
+        <form [formGroup]="pessoaForm" #formDir="ngForm">
+            <div fxLayoutAlign="space-around" fxLayout="row" fxLayoutGap="20px">
+                <div class="form-group">
+                    <mat-form-field>
+                        <input class="form-control" id="nome" name="nome" formControlName="nome" matInput
+                            placeholder="Escreva nome">
+                    </mat-form-field>
+                    <mat-error *ngIf="f.nome.errors &&  (f.nome.dirty || f.nome.touched)">
+                        <div *ngIf="f.nome.errors.required">
+                            <strong translate>Mandatory</strong>
+                        </div>
+                        <div *ngIf="f.nome.errors.maxlength">
+                            Nome muito <strong>grande</strong>
+                        </div>
+                    </mat-error>
+                </div>
+                <div class="form-group">
+                    <mat-form-field>
+                        <input class="form-control" id="email" name="email" formControlName="email" matInput
+                            placeholder="Escreva email">
+
+                    </mat-form-field>
+
+                    <mat-error *ngIf="f.email.errors && (f.email.dirty || f.email.touched)">
+                        <div *ngIf="f.email.errors.required">
+                            <strong translate>Mandatory</strong>
+                        </div>
+                        <div *ngIf="f.email.errors.maxlength">
+                            Email muito <strong>grande</strong>
+                        </div>
+                        <div *ngIf="f.email.errors.email">
+                            <strong translate>Invalid</strong>
+                        </div>
+                    </mat-error>
+                </div>
+
+                <div class="form-group">
+                    <mat-form-field>
+                        <input class="form-control" id="cpf" name="cpf" formControlName="cpf" matInput
+                            placeholder="Escreva cpf">
+
+                    </mat-form-field>
+
+                    <mat-error *ngIf="f.cpf.errors && (f.cpf.dirty || f.cpf.touched)">
+                        <div *ngIf="f.cpf.errors.required">
+                            <strong translate>Mandatory</strong>
+                        </div>
+                        <div *ngIf="f.cpf.errors.cpfvalidator">
+                            <strong translate>Invalid</strong>
+                        </div>
+                    </mat-error>
+                </div>
+
+                <div class="form-group">
+                    <mat-form-field>
+                        <input class="form-control" id="nascimento" name="nascimento" formControlName="nascimento"
+                            matInput [matDatepicker]="picker" placeholder="Escolha data">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+
+                    <mat-error *ngIf="f.nascimento.errors && (f.nascimento.dirty || f.nascimento.touched)">
+                        <div *ngIf="f.nascimento.errors.required">
+                            <strong translate>Mandatory</strong>
+                        </div>
+                    </mat-error>
+                </div>
+            </div>
+            <div fxLayoutAlign="end" fxLayout="row" fxLayoutGap="20px">
+                <button [disabled]="pessoaForm.invalid" mat-button (click)="addUser()"><span translate>Register</span></button>
+            </div>
+        </form>
+    </mat-card>
+</div>

@@ -1,0 +1,20 @@
+{
+  "APP_NAME": "Desafio Softplan",
+  "About": "Sobre",
+  "Home": "Home",
+  "Version": "Versao",
+  "New User": "Novo Usuario",
+  "People List": "Lista de Pessoas",
+  "Name":"Nome",
+  "Birthday":"Nascimento",
+  "Delete":"Deletar",
+  "Edit":"Editar",
+  "Page":"Pagina",
+  "of":"de" ,
+  "Insert Name": "Insira o nome",
+  "Filter":"Filtrar",
+  "Register New Person":"Registrar nova pessoa",
+  "Mandatory": "Obrigatorio",
+  "Invalid":"Invalido",
+  "Register":"Registrar"
+}
