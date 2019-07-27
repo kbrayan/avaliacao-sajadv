@@ -1,19 +1,24 @@
 # angular-frontend
 
-This project was generated with [ngX-Rocket](https://github.com/ngx-rocket/generator-ngx-rocket/)
-version 7.0.1
+Angular Front-end application submited for Softplan Admission Challenge.
 
-# Getting started
+# Running this application alone without backend
 
-1. Go to project folder and install dependencies:
+1. Go to project folder (angular-frontend) and run container:
+Project build is done inside the container.
  ```sh
- npm install
+ docker-compose up
  ```
+2. Access application at localhost:4200
 
-2. Launch development server, and open `localhost:4200` in your browser:
- ```sh
- npm start
- ```
+## Development server
+
+1. Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change
+any of the source files.
+You should not use `ng serve` directly, as it does not use the backend proxy configuration by default.
+
+2. Access application at localhost:4200
+
 
 # Project structure
 
@@ -61,56 +66,6 @@ When building the application, you can specify the target configuration using th
 `--configuration <name>` (do not forget to prepend `--` to pass arguments to npm scripts).
 
 The default build configuration is `prod`.
-
-## Development server
-
-Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change
-any of the source files.
-You should not use `ng serve` directly, as it does not use the backend proxy configuration by default.
-
-## Code scaffolding
-
-Run `npm run generate -- component <name>` to generate a new component. You can also use
-`npm run generate -- directive|pipe|service|class|module`.
-
-If you have installed [angular-cli](https://github.com/angular/angular-cli) globally with `npm install -g @angular/cli`,
-you can also use the command `ng generate` directly.
-
-## Additional tools
-
-Tasks are mostly based on the `angular-cli` tool. Use `ng help` to get more help or go check out the
-[Angular-CLI README](https://github.com/angular/angular-cli).
-
-## Code formatting
-
-All `.ts`, `.js` & `.scss` files in this project are formatted automatically using [Prettier](https://prettier.io),
-and enforced via the `test:ci` script.
-
-A pre-commit git hook has been configured on this project to automatically format staged files, using
-(pretty-quick)[https://github.com/azz/pretty-quick], so you don't have to care for it.
-
-You can also force code formatting by running the command `npm run prettier`.
-
-# What's in the box
-
-The app template is based on [HTML5](http://whatwg.org/html), [TypeScript](http://www.typescriptlang.org) and
-[Sass](http://sass-lang.com). The translation files use the common [JSON](http://www.json.org) format.
-
-#### Tools
-
-Development, build and quality processes are based on [angular-cli](https://github.com/angular/angular-cli) and
-[NPM scripts](https://docs.npmjs.com/misc/scripts), which includes:
-
-- Optimized build and bundling process with [Webpack](https://webpack.github.io)
-- [Development server](https://webpack.github.io/docs/webpack-dev-server.html) with backend proxy and live reload
-- Cross-browser CSS with [autoprefixer](https://github.com/postcss/autoprefixer) and
-  [browserslist](https://github.com/ai/browserslist)
-- Asset revisioning for [better cache management](https://webpack.github.io/docs/long-term-caching.html)
-- Unit tests using [Jasmine](http://jasmine.github.io) and [Karma](https://karma-runner.github.io)
-- End-to-end tests using [Protractor](https://github.com/angular/protractor)
-- Static code analysis: [TSLint](https://github.com/palantir/tslint), [Codelyzer](https://github.com/mgechev/codelyzer),
-  [Stylelint](http://stylelint.io) and [HTMLHint](http://htmlhint.com/)
-- Automatic code formatting with [Prettier](https://prettier.io)
 
 #### Libraries
 
