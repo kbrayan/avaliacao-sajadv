@@ -1,0 +1,12 @@
+version: '3'
+services:
+ docker-postgres:
+  build: .
+  environment:
+    - POSTGRES_PASSWORD=springpass
+    - POSTGRES_DB=springbootdb
+    - POSTGRES_USER=springuser
+  ports:
+    - "5432:5432"
+
+
