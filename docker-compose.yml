@@ -2,7 +2,6 @@ version: "3"
 services:
   docker-spring:
     build: ./spring-backend
-
     ports:
       - "8080:8080"
     depends_on:

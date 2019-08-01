@@ -81,7 +81,6 @@ export class PessoaService {
     return this.http.delete<Pessoa[]>(this.pessoaSoftDeleteUrl + id);
   }
   createPessoa(pessoa: Pessoa) {
-    console.log('posta');
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
