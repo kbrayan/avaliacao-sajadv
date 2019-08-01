@@ -16,7 +16,11 @@
             <mat-icon>language</mat-icon>
           </button>
           <mat-menu #languageMenu="matMenu">
-            <button mat-menu-item *ngFor="let language of languages" (click)="setLanguage(language)">
+            <button
+              mat-menu-item
+              *ngFor="let language of languages"
+              (click)="setLanguage(language)"
+            >
               {{ language }}
             </button>
           </mat-menu>
@@ -25,31 +29,58 @@
       <nav>
         <mat-list>
           <mat-divider></mat-divider>
-          <a mat-list-item routerLink="/home" routerLinkActive="active" (click)="isMobile && sidenav.close()">
+          <a
+            mat-list-item
+            routerLink="/home"
+            routerLinkActive="active"
+            (click)="isMobile && sidenav.close()"
+          >
             <span translate>Home</span>
           </a>
           <mat-divider></mat-divider>
-          <a mat-list-item routerLink="/about" routerLinkActive="active" (click)="isMobile && sidenav.close()">
+          <a
+            mat-list-item
+            id="btnAbout"
+            routerLink="/about"
+            routerLinkActive="active"
+            (click)="isMobile && sidenav.close()"
+          >
             <span translate>About</span>
           </a>
           <mat-divider></mat-divider>
-          <a mat-list-item routerLink="/pessoa-lista" routerLinkActive="active" (click)="isMobile && sidenav.close()">
+          <a
+            mat-list-item
+            id="btnPeopleList"
+            routerLink="/pessoa-lista"
+            routerLinkActive="active"
+            (click)="isMobile && sidenav.close()"
+          >
             <span translate>People List</span>
           </a>
 
           <mat-divider></mat-divider>
-          <a mat-list-item routerLink="/pessoa-criar" routerLinkActive="active" (click)="isMobile && sidenav.close()">
+          <a
+            mat-list-item
+            id="btnRegisterNewPerson"
+            routerLink="/pessoa-criar"
+            routerLinkActive="active"
+            (click)="isMobile && sidenav.close()"
+          >
             <span translate>Register New Person</span>
           </a>
 
           <mat-divider></mat-divider>
-          
         </mat-list>
       </nav>
     </mat-sidenav>
     <mat-sidenav-content>
       <mat-toolbar color="primary" class="mat-elevation-z6">
-        <button class="menu-button" mat-icon-button (click)="sidenav.toggle()" fxHide.gt-sm>
+        <button
+          class="menu-button"
+          mat-icon-button
+          (click)="sidenav.toggle()"
+          fxHide.gt-sm
+        >
           <mat-icon>menu</mat-icon>
         </button>
         <span>{{ title }}</span>

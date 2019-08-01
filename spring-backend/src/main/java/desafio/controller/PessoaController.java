@@ -118,18 +118,6 @@ public class PessoaController {
   }
 
   @CrossOrigin
-  @DeleteMapping("Pessoa/{id}")
-  public ResponseEntity<?> delete(@PathVariable("id") long id) {
-    return pService.findById(id)
-        .map(record -> {
-
-            //TODO:remove repository from controller
-            repository.deleteById(id);
-            return ResponseEntity.ok().build();
-        }).orElse(ResponseEntity.notFound().build());
-  }
-  
-  @CrossOrigin
   @DeleteMapping("SoftDeletePessoa/{id}")
   public ResponseEntity<?> softDelete(@PathVariable("id") long id) {
     return pService.findById(id)
@@ -158,6 +146,8 @@ public class PessoaController {
    public List<Pessoa> PessoasFilterPage(
         @RequestParam(required = true) int pagina,
         @RequestParam(required = true) int quantidade,
+        @RequestParam(required = false) String ordem,
+        @RequestParam(required = false) String direcao,
         @RequestParam(required = false) String nome,
         @RequestParam(required = false) String email,
         @RequestParam(required = false) String cpf
@@ -168,10 +158,17 @@ public class PessoaController {
         if(nome==null){nome="";}
         if(email==null){email="";}
         if(cpf==null){cpf="";}
+        String ordemPesquisa;
+        if(ordem==null){ordemPesquisa="nome";}
+        else{ordemPesquisa=ordem;}
+
+        String dirPesquisa;
+        if(direcao==null){dirPesquisa="asc";}
+        else{dirPesquisa=direcao;}     
+   
+        log.warn(dirPesquisa);
         
-        
-        
-	    return pService.findAllPagina(pagina,quantidade,nome,email,cpf);
+	    return pService.findAllPagina(pagina, quantidade, nome, email, cpf, ordemPesquisa, dirPesquisa);
    }
 
    @CrossOrigin

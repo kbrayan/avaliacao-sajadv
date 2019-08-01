@@ -1,106 +1,114 @@
-
 <mat-card>
-    <p>Editar Pessoa</p>
-    <form [formGroup]="pessoaForm" #formDir="ngForm" >
-      <div fxLayoutAlign="space-around" fxLayout="row" fxLayoutGap="20px">
-    
-        <div class="form-group">
-            <mat-form-field>
-                <input class="form-control" id="nome" name="nome" 
-                formControlName="nome" matInput  placeholder="Escreva nome">
-                
-              </mat-form-field>
-    
-              <mat-error *ngIf="f.nome.errors &&  (f.nome.dirty || f.nome.touched)">
-                <div *ngIf="f.nome.errors.required">
-                    Nome <strong>necessario</strong>
-                </div> 
-                <div *ngIf="f.nome.errors.maxlength">
-                    Nome muito <strong>grande</strong>
-                </div>
-               
-    
-              </mat-error>
-                
-        
-                
-            </div>
-    
-        
-    
-    
-    <div class="form-group">
+  <p>Editar Pessoa</p>
+  <form [formGroup]="pessoaForm" #formDir="ngForm">
+    <div fxLayoutAlign="space-around" fxLayout="row" fxLayoutGap="20px">
+      <div class="form-group">
         <mat-form-field>
-            <input class="form-control" id="email" name="email" 
-            formControlName="email" matInput  placeholder="Escreva email">
-            
-          </mat-form-field>
-    
-          <mat-error *ngIf="f.email.errors && (f.email.dirty || f.email.touched)">
-              <div *ngIf="f.email.errors.required">
-                  Email <strong>necessario</strong>
-              </div> 
-              <div *ngIf="f.email.errors.maxlength">
-                  Email muito <strong>grande</strong>
-              </div>
-              <div *ngIf="f.email.errors.email">
-                  Email <strong>invalido</strong>
-              </div>
-             
-    
-            </mat-error>
-    
-        </div>
-    
-    
-    
-    <div class="form-group">
-        <mat-form-field>
-            <input class="form-control" id="cpf" name="cpf" 
-            formControlName="cpf" matInput  placeholder="Escreva cpf">
-            
-          </mat-form-field>
-    
-          <mat-error *ngIf="f.cpf.errors && (f.cpf.dirty || f.cpf.touched)">
-              <div *ngIf="f.cpf.errors.required">
-                  CPF <strong>necessario</strong>
-              </div> 
-              <div *ngIf="f.cpf.errors.cpfvalidator">
-                  CPF <strong>invalido</strong>
-              </div>
-              
-             
-    
-            </mat-error>
-    
-        </div>
-    
-    
-    <div class="form-group">
-    <mat-form-field>
-        <input class="form-control" id="nascimento" name="nascimento" 
-        formControlName="nascimento" matInput [matDatepicker]="picker" placeholder="Escolha data">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field>
-    
-      <mat-error *ngIf="f.nascimento.errors && (f.nascimento.dirty || f.nascimento.touched)">
-          <div *ngIf="f.nascimento.errors.required">
-              Nascimento <strong>necessario</strong>
-          </div>  
-         
+          <input
+            class="form-control"
+            id="nome"
+            name="nome"
+            formControlName="nome"
+            matInput
+            placeholder="Escreva nome"
+          />
+        </mat-form-field>
+
+        <mat-error *ngIf="f.nome.errors && (f.nome.dirty || f.nome.touched)">
+          <div *ngIf="f.nome.errors.required">
+            Nome <strong>necessario</strong>
+          </div>
+          <div *ngIf="f.nome.errors.maxlength">
+            Nome muito <strong>grande</strong>
+          </div>
         </mat-error>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field>
+          <input
+            class="form-control"
+            id="email"
+            name="email"
+            formControlName="email"
+            matInput
+            placeholder="Escreva email"
+          />
+        </mat-form-field>
+
+        <mat-error *ngIf="f.email.errors && (f.email.dirty || f.email.touched)">
+          <div *ngIf="f.email.errors.required">
+            Email <strong>necessario</strong>
+          </div>
+          <div *ngIf="f.email.errors.maxlength">
+            Email muito <strong>grande</strong>
+          </div>
+          <div *ngIf="f.email.errors.email">
+            Email <strong>invalido</strong>
+          </div>
+        </mat-error>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field>
+          <input
+            class="form-control"
+            id="cpf"
+            name="cpf"
+            formControlName="cpf"
+            matInput
+            placeholder="Escreva cpf"
+          />
+        </mat-form-field>
+
+        <mat-error *ngIf="f.cpf.errors && (f.cpf.dirty || f.cpf.touched)">
+          <div *ngIf="f.cpf.errors.required">
+            CPF <strong>necessario</strong>
+          </div>
+          <div *ngIf="f.cpf.errors.cpfvalidator">
+            CPF <strong>invalido</strong>
+          </div>
+        </mat-error>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field>
+          <input
+            class="form-control"
+            id="nascimento"
+            name="nascimento"
+            formControlName="nascimento"
+            matInput
+            [matDatepicker]="picker"
+            placeholder="Escolha data"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-error
+          *ngIf="
+            f.nascimento.errors && (f.nascimento.dirty || f.nascimento.touched)
+          "
+        >
+          <div *ngIf="f.nascimento.errors.required">
+            Nascimento <strong>necessario</strong>
+          </div>
+        </mat-error>
+      </div>
     </div>
-    
-    
-    
-    
-    </div>
-    
+
     <div fxLayoutAlign="end" fxLayout="row" fxLayoutGap="20px">
-    <button [disabled]="pessoaForm.invalid" mat-button (click)="editUser(pessoaForm.value)">Edit</button>
+      <button
+        [disabled]="pessoaForm.invalid"
+        mat-button
+        (click)="editUser(pessoaForm.value)"
+      >
+        Edit
+      </button>
     </div>
-    
-    </form>
-    
-    </mat-card>
+  </form>
+</mat-card>

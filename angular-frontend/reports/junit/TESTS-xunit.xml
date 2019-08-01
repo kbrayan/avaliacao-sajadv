@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<testsuite name="HeadlessChrome 77.0.3835 (Linux 0.0.0)" package="" timestamp="2019-07-31T22:05:58" id="0" hostname="kevin-W3x0ET" tests="46" errors="0" failures="0" time="8.665">
+  <properties>
+    <property name="browser.fullName" value="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/77.0.3835.0 Safari/537.36"/>
+  </properties>
+  <testcase name="untilDestroyed should work with classes that are not components" time="0.01" classname="untilDestroyed"/>
+  <testcase name="untilDestroyed should throw when destroy method doesnt exist" time="0.002" classname="untilDestroyed"/>
+  <testcase name="untilDestroyed should unsubscribe from anywhere" time="0.002" classname="untilDestroyed"/>
+  <testcase name="LoaderComponent should not display a message by default" time="3.343" classname="LoaderComponent"/>
+  <testcase name="LoaderComponent should be visible when app is loading" time="0.747" classname="LoaderComponent"/>
+  <testcase name="LoaderComponent should display specified message" time="0.631" classname="LoaderComponent"/>
+  <testcase name="LoaderComponent should not be visible by default" time="0.792" classname="LoaderComponent"/>
+  <testcase name="ApiPrefixInterceptor should not prepend environment.serverUrl to request url" time="0.019" classname="ApiPrefixInterceptor"/>
+  <testcase name="ApiPrefixInterceptor should prepend environment.serverUrl to the request url" time="0.02" classname="ApiPrefixInterceptor"/>
+  <testcase name="ShellComponent should create" time="1.357" classname="ShellComponent"/>
+  <testcase name="CacheInterceptor with default configuration should respond from the cache" time="0.418" classname="CacheInterceptor"/>
+  <testcase name="CacheInterceptor with default configuration should not cache the request in case of error" time="0.013" classname="CacheInterceptor"/>
+  <testcase name="CacheInterceptor with default configuration should cache the request" time="0.013" classname="CacheInterceptor"/>
+  <testcase name="CacheInterceptor with update forced configuration should force cache update" time="0.009" classname="CacheInterceptor"/>
+  <testcase name="HomeComponent should create" time="0.468" classname="HomeComponent"/>
+  <testcase name="untilDestroyed should work with multiple observables" time="0.003" classname="untilDestroyed"/>
+  <testcase name="untilDestroyed should not destroy other instances" time="0.001" classname="untilDestroyed"/>
+  <testcase name="untilDestroyed should work with subclass" time="0.001" classname="untilDestroyed"/>
+  <testcase name="untilDestroyed should not throw when destroy method is implemented on super class" time="0.001" classname="untilDestroyed"/>
+  <testcase name="untilDestroyed should throw when destroy method doesnt exist" time="0.001" classname="untilDestroyed"/>
+  <testcase name="untilDestroyed should unsubscribe from anywhere" time="0.002" classname="untilDestroyed"/>
+  <testcase name="untilDestroyed should work with classes that are not components" time="0.001" classname="untilDestroyed"/>
+  <testcase name="HttpCacheService getCacheData should return null if no cache" time="0.138" classname="HttpCacheService"/>
+  <testcase name="HttpCacheService getCacheData should return cached data with url parameters if exists" time="0.008" classname="HttpCacheService"/>
+  <testcase name="HttpCacheService getCacheData should return cached data if exists" time="0.008" classname="HttpCacheService"/>
+  <testcase name="HttpCacheService setPersistence should persist cache to session storage" time="0.068" classname="HttpCacheService"/>
+  <testcase name="HttpCacheService setPersistence should persist cache to local storage" time="0.014" classname="HttpCacheService"/>
+  <testcase name="HttpCacheService setPersistence should clear previous cache data when persistence value change" time="0.008" classname="HttpCacheService"/>
+  <testcase name="HttpCacheService cleanCache should not affect cache entries newer than specified date" time="0.008" classname="HttpCacheService"/>
+  <testcase name="HttpCacheService cleanCache should clear all cache if no date is specified" time="0.008" classname="HttpCacheService"/>
+  <testcase name="HttpCacheService cleanCache should clear existing since specified date" time="0.009" classname="HttpCacheService"/>
+  <testcase name="HttpCacheService clearCacheData should clear existing cache data" time="0.007" classname="HttpCacheService"/>
+  <testcase name="HttpCacheService clearCacheData should do nothing if no cache exists" time="0.007" classname="HttpCacheService"/>
+  <testcase name="HttpCacheService getHttpCacheEntry should return null if no cache" time="0.014" classname="HttpCacheService"/>
+  <testcase name="HttpCacheService getHttpCacheEntry should return cached data date  if exists" time="0.008" classname="HttpCacheService"/>
+  <testcase name="HttpCacheService setCacheData should replace existing data" time="0.006" classname="HttpCacheService"/>
+  <testcase name="HttpCacheService setCacheData should set cache data" time="0.007" classname="HttpCacheService"/>
+  <testcase name="HttpCacheService setCacheData should set cache date correctly" time="0.088" classname="HttpCacheService"/>
+  <testcase name="Logger should create an instance" time="0.001" classname="Logger"/>
+  <testcase name="Logger should add a new LogOutput and receives only production log entries" time="0.002" classname="Logger"/>
+  <testcase name="Logger should add a new LogOutput and receives log entries" time="0.002" classname="Logger"/>
+  <testcase name="ErrorHandlerInterceptor should catch error and call error handler" time="0.011" classname="ErrorHandlerInterceptor"/>
+  <testcase name="HttpService should not use API prefix" time="0.01" classname="HttpService"/>
+  <testcase name="HttpService should use error handler, API prefix and no cache by default" time="0.008" classname="HttpService"/>
+  <testcase name="HttpService should skip error handler" time="0.009" classname="HttpService"/>
+  <testcase name="HttpService should use cache" time="0.014" classname="HttpService"/>
+  <testcase name="Shell childRoutes should create routes as children of shell" time="0" classname="Shell"/>
+  <testcase name="AboutComponent should create" time="0.319" classname="AboutComponent"/>
+  <testcase name="AppComponent should create the app" time="0.029" classname="AppComponent"/>
+  <system-out>
+    <![CDATA[
+]]>
+  </system-out>
+  <system-err/>
+</testsuite>

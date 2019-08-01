@@ -1,30 +1,24 @@
-version: '3'
+version: "3"
 services:
- docker-spring:
-  build: ./gs-spring-boot/complete
-  environment:
-    - POSTGRES_PASSWORD=springpass
-    - POSTGRES_DB=springbootdb
-    - POSTGRES_USER=springuser
-  ports:
-    - "8080:8080"
-  depends_on:
-    - docker-postgre
- docker-postgre:
-  build: ./postgre-docker
-  environment:
-    - POSTGRES_PASSWORD=springpass
-    - POSTGRES_DB=springbootdb
-    - POSTGRES_USER=springuser
-  ports:
-    - "5432:5432"
- docker-angular:
-  build: ./angular-frontend
-  ports:
-    - "4200:4200"
-  depends_on:
-    - docker-spring
+  docker-spring:
+    build: ./spring-backend
 
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgre-docker
 
-
-
+  postgre-docker:
+    build: ./postgre-docker
+    environment:
+      - POSTGRES_PASSWORD=springpass
+      - POSTGRES_DB=springbootdb
+      - POSTGRES_USER=springuser
+    ports:
+      - "5432:5432"
+  docker-angular:
+    build: ./angular-frontend
+    ports:
+      - "4200:4200"
+    depends_on:
+      - docker-spring

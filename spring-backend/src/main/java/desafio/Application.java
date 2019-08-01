@@ -39,14 +39,14 @@ public class Application {
 		TODO: JPA repository populators
 		*/
 
-		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		/*SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		repository.save(new Pessoa("Jack", "jack@desafio.com","10283073900", format.parse("2009-12-31")));
 		repository.save(new Pessoa("Chloe", "chloe@desafio.com","10283073900", format.parse("2009-12-31")));
 		repository.save(new Pessoa("Chloe2", "chloe@desafio.com","10283073900", format.parse("2009-12-31")));
 		repository.save(new Pessoa("Kim", "kim@desafio.com","10283073900", format.parse("2009-12-31")));
 		repository.save(new Pessoa("David", "david@desafio.com","10283073900", format.parse("2009-12-31")));
 		repository.save(new Pessoa("Michelle", "michelle@desafio.com","10283073900", format.parse("2009-12-31")));
-
+*/
 		log.info("Aplicacao Rodando");
 		};
 		

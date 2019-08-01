@@ -2,112 +2,147 @@
   <mat-card>
     <p translate>Filter</p>
     <div fxLayoutAlign="space-around" fxLayout="row" fxLayoutGap="20px">
-
       <!-- Campo Filtro Nome -->
       <mat-form-field fxFlex="25">
-        <input [(ngModel)]="filtro.nome" class="form-control" id="nome" name="nome" matInput placeholder="Name">
+        <input
+          [(ngModel)]="filtro.nome"
+          class="form-control"
+          id="nome"
+          name="nome"
+          matInput
+          placeholder="Name"
+        />
       </mat-form-field>
 
       <!-- Campo Filtro Email -->
       <mat-form-field fxFlex="25">
-        <input [(ngModel)]="filtro.email" class="form-control" id="email" name="email" matInput placeholder="Email">
+        <input
+          [(ngModel)]="filtro.email"
+          class="form-control"
+          id="email"
+          name="email"
+          matInput
+          placeholder="Email"
+        />
       </mat-form-field>
 
       <!-- Campo Filtro CPF -->
       <mat-form-field fxFlex="10">
-        <input [(ngModel)]="filtro.cpf" class="form-control" id="cpf" name="cpf" matInput placeholder="CPF">
+        <input
+          [(ngModel)]="filtro.cpf"
+          class="form-control"
+          id="cpf"
+          name="cpf"
+          matInput
+          placeholder="CPF"
+        />
       </mat-form-field>
 
       <!-- Botao Filtrar -->
       <div fxFlex="20">
-        <button mat-raised-button (click)="filtroPesquisar()"><span translate>Filter</span></button>
+        <button mat-raised-button (click)="pesquisarFiltrado()">
+          <span translate>Filter</span>
+        </button>
       </div>
       <div fxFlex></div>
     </div>
-
-
   </mat-card>
 
   <table mat-table [dataSource]="pessoaList" class="mat-elevation-z8">
-    <mat-progress-bar *ngIf="carregandoDados" mode="indeterminate"></mat-progress-bar>
-
+    <mat-progress-bar
+      *ngIf="carregandoDados"
+      mode="indeterminate"
+    ></mat-progress-bar>
 
     <!-- Coluna Id -->
     <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef> Id. </th>
-      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      <th mat-header-cell *matHeaderCellDef>Id.</th>
+      <td mat-cell *matCellDef="let element">{{ element.id }}</td>
     </ng-container>
 
     <!-- Coluna Nome -->
     <ng-container matColumnDef="nome">
-      <th translate mat-header-cell *matHeaderCellDef>Name<mat-icon (click)="sortNome()" aria-hidden="false"
-          aria-label="">swap_vert</mat-icon>
+      <th translate mat-header-cell *matHeaderCellDef>
+        Name<mat-icon (click)="sortNome()" aria-hidden="false" aria-label=""
+          >swap_vert</mat-icon
+        >
       </th>
-      <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
+      <td mat-cell *matCellDef="let element">{{ element.nome }}</td>
     </ng-container>
 
     <!-- Coluna Email -->
     <ng-container matColumnDef="email">
-      <th mat-header-cell *matHeaderCellDef> Email <mat-icon (click)="sortEmail()" aria-hidden="false" aria-label="">
-          swap_vert</mat-icon>
+      <th mat-header-cell *matHeaderCellDef>
+        Email
+        <mat-icon (click)="sortEmail()" aria-hidden="false" aria-label="">
+          swap_vert</mat-icon
+        >
       </th>
-      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+      <td mat-cell *matCellDef="let element">{{ element.email }}</td>
     </ng-container>
 
     <!-- Coluna CPF -->
     <ng-container matColumnDef="cpf">
-      <th mat-header-cell *matHeaderCellDef> Cpf </th>
-      <td mat-cell *matCellDef="let element"> {{element.cpf | cpf}} </td>
+      <th mat-header-cell *matHeaderCellDef>Cpf</th>
+      <td mat-cell *matCellDef="let element">{{ element.cpf | cpf }}</td>
     </ng-container>
 
     <!-- Coluna Nascimento -->
     <ng-container matColumnDef="nascimento">
-      <th translate mat-header-cell *matHeaderCellDef>Birthday<mat-icon (click)="sortNascimento()" aria-hidden="false"
-          aria-label="">swap_vert</mat-icon>
+      <th translate mat-header-cell *matHeaderCellDef>
+        Birthday<mat-icon
+          (click)="sortNascimento()"
+          aria-hidden="false"
+          aria-label=""
+          >swap_vert</mat-icon
+        >
       </th>
-      <td mat-cell *matCellDef="let element"> {{element.nascimento | date: 'dd/MM/yyyy'}} </td>
+      <td mat-cell *matCellDef="let element">
+        {{ element.nascimento | date: 'dd/MM/yyyy' }}
+      </td>
     </ng-container>
 
     <!-- Delete Column -->
     <ng-container matColumnDef="delete">
       <th translate mat-header-cell *matHeaderCellDef>Delete</th>
-      <td mat-cell *matCellDef="let element"> <button mat-raised-button (click)="deletarPessoa(element)">Delete</button>
+      <td mat-cell *matCellDef="let element">
+        <button mat-raised-button (click)="deletarPessoa(element)">
+          Delete
+        </button>
       </td>
     </ng-container>
 
     <!-- Edit Column -->
     <ng-container matColumnDef="edit">
       <th translate mat-header-cell *matHeaderCellDef>Edit</th>
-      <td mat-cell *matCellDef="let element"> <button mat-raised-button
-          [routerLink]="['/pessoa-editar', element.id]">Edit</button></td>
-
-
-
+      <td mat-cell *matCellDef="let element">
+        <button mat-raised-button [routerLink]="['/pessoa-editar', element.id]">
+          Edit
+        </button>
+      </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-
-
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
-
-
 </div>
 
-
 <div fxLayoutAlign="right center" fxLayout="row" fxLayoutGap="20px">
-
   <app-loader [isLoading]="carregandoContagem" size="1"></app-loader>
-  
+
   <div *ngIf="!carregandoContagem">
     <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-      <mat-button-toggle *ngFor="let page of paginas" (click)="filtroPesquisar(page)" value="bold">{{page}}
+      <mat-button-toggle
+        *ngFor="let page of paginas"
+        (click)="pesquisarFiltrado(page)"
+        value="bold"
+        >{{ page }}
       </mat-button-toggle>
     </mat-button-toggle-group>
     <div>
-      <span translate>Page</span> {{paginaAtual}}
+      <span translate>Page</span> {{ paginaAtual }}
       <span translate>of</span>
-      <span> {{numeroDePaginas}}</span>
+      <span> {{ numeroDePaginas }}</span>
     </div>
   </div>
 </div>

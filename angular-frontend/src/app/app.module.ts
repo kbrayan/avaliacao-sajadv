@@ -15,11 +15,10 @@ import { PessoaModule } from './pessoa/pessoa.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { StoreModule } from '@ngrx/store';
-import { NgBrazil } from 'ng-brazil'
+import { NgBrazil } from 'ng-brazil';
 import { EffectsModule } from '@ngrx/effects';
 
-
-import { StoreDevtools, StoreDevtoolsModule} from '@ngrx/store-devtools';
+import { StoreDevtools, StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   imports: [
@@ -38,7 +37,7 @@ import { StoreDevtools, StoreDevtoolsModule} from '@ngrx/store-devtools';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    StoreDevtoolsModule.instrument({maxAge:25}),
+    StoreDevtoolsModule.instrument({ maxAge: 25 }),
     AppRoutingModule,
     NgBrazil
   ],

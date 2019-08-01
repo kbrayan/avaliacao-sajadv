@@ -9,26 +9,29 @@ import { PessoaEditarComponent } from './pessoa-editar/pessoa-editar.component';
 import { PessoaService } from './pessoa.service';
 import { PessoaCriarComponent } from './pessoa-criar/pessoa-criar.component';
 
-import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 
-import { NgBrazil } from 'ng-brazil' 
+import { NgBrazil } from 'ng-brazil';
 import { SharedModule } from '@app/shared';
 
-
 @NgModule({
-  imports: [CommonModule,
-     TranslateModule,
-      FlexLayoutModule,
-       MaterialModule,
-        PessoaListaRoutingModule,
-         FormsModule,
-         ReactiveFormsModule,
-         NgBrazil,
-         SharedModule
-        ],
-  declarations: [PessoaListaComponent, PessoaEditarComponent, PessoaCriarComponent],
-  providers: [PessoaService],
+  imports: [
+    CommonModule,
+    TranslateModule,
+    FlexLayoutModule,
+    MaterialModule,
+    PessoaListaRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgBrazil,
+    SharedModule
+  ],
+  declarations: [
+    PessoaListaComponent,
+    PessoaEditarComponent,
+    PessoaCriarComponent
+  ],
+  providers: [PessoaService]
 })
-
-export class PessoaModule { }
+export class PessoaModule {}

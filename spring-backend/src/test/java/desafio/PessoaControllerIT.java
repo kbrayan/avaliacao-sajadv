@@ -33,4 +33,8 @@ public class PessoaControllerIT {
         this.base = new URL("http://localhost:" + port + "/");
     }
 
+    @Test
+    public void getdesafio() throws Exception {
+       
+    }
 }

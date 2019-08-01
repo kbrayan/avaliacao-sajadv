@@ -14,19 +14,15 @@ export class AboutComponent implements OnInit {
 
   pessoas$: Observable<any>;
 
-
   constructor() {}
 
   ngOnInit() {}
 
   increment() {
-    
-    var usuario = {nome:"",cpf:"",email:"",id:0};
+    var usuario = { nome: '', cpf: '', email: '', id: 0 };
     usuario.id = Math.floor(Math.random() * 1000);
-    usuario.nome = "Kevin";
-    usuario.cpf = "10283073900";
-    usuario.email = "kevin.brayan@outlook.com";
-
+    usuario.nome = 'Kevin';
+    usuario.cpf = '10283073900';
+    usuario.email = 'kevin.brayan@outlook.com';
   }
-
 }

@@ -16,8 +16,30 @@ describe('when the app loads', () => {
 
   describe('and the page loads', () => {
     it('should display the hello message', async () => {
-      await browser.wait(until.visibilityOf(shell.welcomeText), 5000, 'Element taking too long to appear');
+      await browser.wait(
+        until.visibilityOf(shell.welcomeText),
+        5000,
+        'Element taking too long to appear'
+      );
       expect(await shell.getParagraphText()).toEqual('Hello world !');
     });
+  });
+
+  it('should navigate to the about page when the about button is clicked', async () => {
+    await shell.aboutButton.click();
+
+    expect(await browser.getCurrentUrl()).toContain('/about');
+  });
+
+  it('should navigate to the peoplelist page when the about button is clicked', async () => {
+    await shell.peopleListButton.click();
+
+    expect(await browser.getCurrentUrl()).toContain('/pessoa-lista');
+  });
+
+  it('should navigate to the pessoacriar page when the about button is clicked', async () => {
+    await shell.newPersonButton.click();
+
+    expect(await browser.getCurrentUrl()).toContain('/pessoa-criar');
   });
 });

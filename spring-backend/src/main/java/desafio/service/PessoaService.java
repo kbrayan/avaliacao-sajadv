@@ -3,6 +3,7 @@ package desafio.service;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 
 import java.util.List;
 import java.util.Optional;
@@ -14,6 +15,8 @@ import org.springframework.data.jpa.domain.Specification;
 import desafio.model.*;
 import desafio.repository.*;
 import desafio.criteria.*;
+
+import org.springframework.data.domain.Sort.Direction;
 
 @Service
 public class PessoaService {
@@ -51,7 +54,7 @@ public class PessoaService {
         return repository.countByCpf(cpf) != 0;
     }
 
-    public List<Pessoa> findAllPagina(int pagina, int quantidade, String nome, String email, String cpf) {
+    public List<Pessoa> findAllPagina(int pagina, int quantidade, String nome, String email, String cpf, String ordem, String direcao) {
         Specification<Pessoa> specFinal;
         PessoaSpecification specNome, specEmail, specCpf, specNaoRemovido;
 
@@ -78,8 +81,13 @@ public class PessoaService {
         
         specFinal = specNome.and(specEmail).and(specCpf).and(specNaoRemovido);
       
-
-        Pageable pageable = PageRequest.of(pagina, quantidade);
+        Pageable pageable;
+        if(direcao.equals("desc")){
+            pageable = PageRequest.of(pagina, quantidade, Direction.DESC, ordem);
+        }
+        else{
+            pageable = PageRequest.of(pagina, quantidade, Direction.ASC, ordem);
+        }
 
         List<Pessoa> pessoaList = repository.findAll(specFinal, pageable).getContent();
 

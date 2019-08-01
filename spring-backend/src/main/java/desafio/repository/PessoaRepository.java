@@ -14,6 +14,7 @@ import desafio.model.*;
 public interface PessoaRepository extends PagingAndSortingRepository<Pessoa, Long>, JpaSpecificationExecutor<Pessoa>  {
 
     List<Pessoa> findByEmail(String email);
+    List<Pessoa> findByNome(String email);
     
     Page<Pessoa> findByRemovidoAllIgnoreCase(boolean removido, Pageable pageable);
 
