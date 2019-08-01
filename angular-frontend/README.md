@@ -1,25 +1,5 @@
 # angular-frontend
 
-Angular Front-end application submited for Softplan Admission Challenge.
-
-# Running this application stand-alone
-
-1. Go to project folder (angular-frontend) and run container:
-   Project build is done inside the container.
-
-```sh
-docker-compose up
-```
-
-2. Access application at localhost:4200
-
-## Development server
-
-1. Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change
-   any of the source files.
-   You should not use `ng serve` directly, as it does not use the backend proxy configuration by default.
-
-2. Access application at localhost:4200
 
 # Project structure
 
